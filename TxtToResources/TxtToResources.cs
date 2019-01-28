@@ -89,6 +89,11 @@ namespace TxtToResources
             writer.Close();
         }
 
+        /// <summary>
+        /// 选择资源文件，按钮单机事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -102,6 +107,11 @@ namespace TxtToResources
             }
         }
 
+        /// <summary>
+        /// 根据键获取值，按钮单机事件。
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textBox1.Text))

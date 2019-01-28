@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MultiLaguageUse.Enum
+namespace MultiLanguageWebTest.Enum
 { 
     public enum EnumSlightException
     {

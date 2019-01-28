@@ -1,10 +1,11 @@
-﻿using MultiLaguageUse.Enum;
+﻿using MultiLanguageWebTest.Enum;
+using MultiLanguageWebTest.JsonHelper;
 using System;
 using System.Diagnostics;
 using System.IO;
 using System.Resources;
 
-namespace MultiLaguageUse
+namespace MultiLanguageWebTest
 {
     public class Program
     {
@@ -15,7 +16,7 @@ namespace MultiLaguageUse
         public static ResourceManager rm = null;
         public static void Main(string[] args)
         {
-            FindFindLanguageResource("zh_CN");
+            FindFindLanguageResource(JsonConfigurationHelper.GetAppSettingSingle("language"));
             string Value = GetStringValue(EnumSlightException.Login.ToString());
             if (Value == null)
             {
