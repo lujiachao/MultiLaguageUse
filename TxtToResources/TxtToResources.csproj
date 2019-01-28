@@ -61,7 +61,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Resources\zh_CN.resources" />
     <EmbeddedResource Include="TxtToResources.resx">
       <DependentUpon>TxtToResources.cs</DependentUpon>
     </EmbeddedResource>
@@ -77,6 +79,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zh_CN.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\en_US2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\en_US.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
