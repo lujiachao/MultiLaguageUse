@@ -28,14 +28,16 @@ namespace MultiLanguageWebTest
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton(Configuration);
+            services.Configure<MultiLanguageChoose>(Configuration.GetSection("MultiLanguageChoose"));
             services.AddTransient<GetResourcesValue>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IOptions<MultiLanguageChoose> options)
         {
-            MultiLaguagePower.languageBind(JsonConfigurationHelper.GetAppSettings<MultiLanguageChoose>("MultiLanguageChoose").DirPath, JsonConfigurationHelper.GetAppSettings<MultiLanguageChoose>("MultiLanguageChoose").Language);
+            //MultiLaguagePower.languageBind(JsonConfigurationHelper.GetAppSettings<MultiLanguageChoose>("MultiLanguageChoose").DirPath, JsonConfigurationHelper.GetAppSettings<MultiLanguageChoose>("MultiLanguageChoose").Language);
+            MultiLaguagePower.languageBind(JsonConfigurationHelper.GetAppSettings(Configuration, options).DirPath, JsonConfigurationHelper.GetAppSettings(Configuration, options).Language);
             MultiLanguageConfigurationProvider.ServiceProvider = app.ApplicationServices;
             if (env.IsDevelopment())
             {
