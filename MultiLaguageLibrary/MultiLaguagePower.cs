@@ -25,6 +25,7 @@ namespace MultiLaguageLibrary
         public static IServiceProvider languageBind(string filePath = null, string charset = "en_US")
         {
             var serviceCollection = new ServiceCollection();
+            serviceCollection.AddTransient<GetResourcesFactory>();
             return languageBind(serviceCollection.BuildServiceProvider(), filePath, charset);
         }
     }

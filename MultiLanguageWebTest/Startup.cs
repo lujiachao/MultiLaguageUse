@@ -28,6 +28,7 @@ namespace MultiLanguageWebTest
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton(Configuration);
+            services.AddTransient<GetResourcesValue>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -35,7 +36,7 @@ namespace MultiLanguageWebTest
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             MultiLaguagePower.languageBind(JsonConfigurationHelper.GetAppSettings<MultiLanguageChoose>("MultiLanguageChoose").DirPath, JsonConfigurationHelper.GetAppSettings<MultiLanguageChoose>("MultiLanguageChoose").Language);
-
+            MultiLanguageConfigurationProvider.ServiceProvider = app.ApplicationServices;
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
