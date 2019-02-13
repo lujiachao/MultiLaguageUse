@@ -1,3 +1,0 @@
-1=Username
-2=Login
-3=Language:

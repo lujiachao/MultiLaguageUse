@@ -17,14 +17,14 @@ namespace MultiLanguageWebTest.Controllers
         [HttpGet]
         public ActionResult<string> Get()
         {
-            return _getResourcesValue.GetStringValue("2");
+            return _getResourcesValue.GetStringValue("001");
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<string> Get(string id)
         {
-            return "value";
+            return _getResourcesValue.GetStringValue(id);
         }
 
         // POST api/values

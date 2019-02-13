@@ -63,7 +63,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Resources\zh_CN.resources" />
+    <EmbeddedResource Include="Resources\en_US.resources" />
+    <EmbeddedResource Include="Resources\zh_CN.resources" />
     <EmbeddedResource Include="TxtToResources.resx">
       <DependentUpon>TxtToResources.cs</DependentUpon>
     </EmbeddedResource>
@@ -81,13 +82,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\zh_CN.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\en_US2.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\en_US.txt" />
+    <Content Include="Resources\en_US.txt" />
+    <Content Include="Resources\zh_CN.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

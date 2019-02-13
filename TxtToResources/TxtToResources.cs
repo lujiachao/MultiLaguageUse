@@ -50,7 +50,7 @@ namespace TxtToResources
             foreach (var strKeyValueArray in strKeyValueArrays)
             {
                 string[] strSingleArrays = strKeyValueArray.Split('=');
-                writer.AddResource( strSingleArrays[0], strSingleArrays[1]);
+                writer.AddResource( strSingleArrays[0].Trim(), strSingleArrays[1].Trim());
             }
             writer.Close();
         }
